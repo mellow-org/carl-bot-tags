@@ -1,0 +1,12 @@
+{=(COMMENT):This is the gif/picture section, you can add anything to here, mostly imgur will work, I'm not 100% sure on other sources.}
+{=(img):{#:https://i.imgur.com/eUKM3Ay.gif ~https://i.imgur.com/OM9eiJ1.gif ~https://i.imgur.com/2lacG7l.gif ~https://i.imgur.com/UWbKpx8.gif ~https://i.imgur.com/4ssddEQ.gif ~https://i.imgur.com/2k0MFIr.gif ~https://i.imgur.com/F3cjr3n.gif }}
+
+{=(COMMENT):this is the title section, in here you can add whatever else you want the bot to say when you trigger the command}
+{=(title):{#:{user(name)} pat {target(name)}~{user(name)} pat {target(name)}, there there...~{user(name)} pat {target(name)}, pat pat}}
+
+{=(json):{"title":"{title}","image":{"url":"{img}"},"color":62463}}
+
+{=(error):Please mention someone.}
+{=():{error}}
+
+{{if({target(id)}!={user(id)}):c:cembed {channel(id)} {json}}}
