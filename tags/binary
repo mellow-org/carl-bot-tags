@@ -1,0 +1,8 @@
+{embed(color):{user(color)}}
+{=(largs):{lower:{args}}}
+{=(binary):{replace(a, 01100001):{replace(b, 01100010):{replace(c, 01100011):{replace(d, 01100100):{replace(e, 01100101):{replace(f, 01100110):{replace(g, 01100111):{replace(h, 01101000):{replace(i, 01101001):{replace(j, 01101010):{replace(k, 01101011):{replace(l, 01101100):{replace(m, 01101101):{replace(n, 01101110):{replace(o, 01101111):{replace(p, 01110000):{replace(q, 01110001):{replace(r, 01110010):{replace(s, 01110011):{replace(t, 01110100):{replace(u, 01110101):{replace(v, 01110110):{replace(w, 01110111):{replace(x, 01111000):{replace(y, 01111001):{replace(z, 01111010):{replace( , 00100000):{largs}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+{=(words):{replace(00100000, ):{join():{replace(01100001,a):{replace(01100010,b):{replace(01100011,c):{replace(01100100,d):{replace(01100101,e):{replace(01100110,f):{replace(01100111,g):{replace(01101000,h):{replace(01101001,i):{replace(01101010,j):{replace(01101011,k):{replace(01101100,l):{replace(01101101,m):{replace(01101110,n):{replace(01101111,o):{replace(01110000,p):{replace(01110001,q):{replace(01110010,r):{replace(01110011,s):{replace(01110100,t):{replace(01110101,u):{replace(01110110,v):{replace(01110111,w):{replace(01111000,x):{replace(01111001,y):{replace(01111010,z):{largs(2+)}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+{=(title):{if({args(1)}==translate):Binary to words|Words to Binary}}
+
+{c:cembed {channel(id)} {"title":"{title}","description":"Here is your decoded message..\n```{if({args(1)}==translate):{words}|{binary}}```","color":{user(color)},"footer":{"text":"Translations made by \\! SpinaChant#1860\\"}}}
