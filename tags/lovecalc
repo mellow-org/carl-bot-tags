@@ -1,0 +1,75 @@
+{=(COMMENT):Quick setup to adapt the command to your server's settings. (Prefix and command name)}
+{=(prefix):-}
+{=(tag.Name):lovecalc}
+
+{=(COMMENT):The embed's side color. I set it to the user highest color by default. Change it as per your need. Make sure to include # before the hex code if you do decide to include one.}
+{embed(color):{user(color)}}
+
+{=(COMMENT):------Initialization------}
+{=(COMMENT):Returns the current arguments length and checks if it equal to 1 or 2.}
+{=(length):{index(&$):{args} &$}}
+{=(COMMENT):Checks if the current arguments length is 1 or 2.}
+{=(check.Length1):{if({length}==1):true|false}}
+{=(check.Length2):{if({length}==2):true|false}}
+{=(COMMENT):Checks if there is an "@" character in both arguments.}
+{=(check.At):{and({in(@):{1}}==true|{in(@):{2}}==true):true|false}}
+
+{=(COMMENT):Returns true if the user mentioned one person, if the user didn't mention themself, and if the argument is actually a mention (contains the @ character).}
+{=(check.One):{all({check.Length1}==true|{in({user(id)}):{1}}==false|{in(@):{1}}==true):true|false}}
+{=(COMMENT):Returns true if the user mentioned two people, if the user didn't mention the same person twice, and if the arguments actually contain mentions (contains the @ character for each).}
+{=(check.Two):{all({check.Length2}==true|{1}!={2}|{check.At}==true):true|false}}
+
+{=(COMMENT):------Seed and Range Management------}
+{=(COMMENT):Sets the seed's content to the two first arguments/mentions. Reminder: Seeds allow range and random blocks to always return the same content when the given seed is the same.}
+{=(seed1):{user(id)} {1}}
+{=(seed2):{1} {2}}
+{=(do.Seed):{if({check.One}==true):{seed1}|{if({check.Full}==true):{seed2}}}}
+{=(COMMENT):Basic setup of the seeded range block.}
+{=(number):{range({do.Seed}):1-100}}
+{=(COMMENT):------Outputs------}
+{=(COMMENT):Carl-bot Emojis to display depending on the value of "number".}
+{=(emojis):<:cbotneutral_face:676420694787096587> <:cbotface:676420695508647946> <:cbotgrinning:676420694694821899> <:cbotweary:676420694820651018> <:cbothearteyes:676420694715924500>}
+{=(emoji):{if({number}<=19):{emojis(1)}|{if({number}<=39):{emojis(2)}|{if({number}<=59):{emojis(3)}|{if({number}<=79):{emojis(4)}|{if({number}<=100):{emojis(5)}}}}}}}
+
+{=(COMMENT):Message to display when the user only mentioned one person.}
+{=(output.One):Checking for compatibility between
+{user(mention)} and {1}...
+
+Result:  **`{number}% compatible`** {emoji}}
+{=(COMMENT):Message to display when the user mentioned two people.}
+{=(output.Two):Checking for compatibility between
+{1} and {2}...
+
+Result:  **`{number}% compatible`** {emoji}}
+{=(COMMENT):Message to display when the user didn't mention anyone, showing them instructions on how to use the command properly.}
+{=(error):Please mention at least one person to see if you are compatible.
+You can either mention only one person so it will check for the compatibility between them and yourself, or mention two other people to see how compatible they are.
+Usage: `{prefix}{tag.Name} @someone (optional @someone else)`}
+
+{=(COMMENT):Message to display when the user *only* mentioned themselves or where they mentioned themselves *and* themselves.}
+{=(yourself):Why would you check how much you love yourself?
+Give yourself some love, little bean. ❤}
+{=(COMMENT):Message to display when the user mentioned the two same people.}
+{=(same):They are the same person... Of course they are compatible. UwU}
+{=(COMMENT):Conditionally call the proper output according to the situation.}
+{=(output):{if({check.One}==true):{output.One}|{if({check.Two}==true):{output.Two}|{all({check.Length1}==true|{in({user(id)}):{1}}==true):{yourself}|{all({check.Length2}==true|{1}=={2}|{in({user(id)}):{1}}==true):{yourself}|{all({check.Length2}==true|{1}=={2}):{same}|{error}}}}}}}
+
+{=(COMMENT):Debug Outputs, only to test out mistakes and potential errors. To call when debugging.}
+{=(output.Debug):__Debug:__
+Current Args Length: **{length}**
+Length check 1: **{check.Length1}**
+Length check 2: **{check.Length2}**
+Checks @@: **{check.At}**
+Checks len1 && @: **{check.One}**
+Checks len2 && @: **{check.Two}**
+Seed 1: **{seed1}**
+Seed 2: **{seed2}**
+Seed to return: **{do.Seed}**
+Actual range: **{number}**}
+
+{=(COMMENT):Random footers for more fun!}
+{=(footers):Robots don't know about love...~Love is in the air...~Aww, so cute!~Well, that was unexpected...~"We're so proud of you" - Cookie Clicker Gradmas~This is 100% accurate...}
+
+{c:cembed {channel(id)} {"title":"Love Calculator","description":"{output}","thumbnail":{"url":" https://cdn.discordapp.com/emojis/425417024722829344.png?v=1 "},"color":5198940,"footer":{"icon_url":"{server(icon)}","text":"{rand:{footers}}"}}}
+
+{=(COMMENT):This tag is from Carl-Bot Support, the official server for the bot. I added the footers, however.}
