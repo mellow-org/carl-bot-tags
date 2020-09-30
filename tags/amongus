@@ -1,0 +1,15 @@
+{=(emoji):<:{#:white:757274661154324692~black:757274660814717049~brown:757274661024301086~yellow:757274661359976549~red:757274661422628985~purple:757274661615829022~pink:757274661372297317~orange:757274661431279626~lime:757274661225627696~green:757274661318033548~cyan:757274660994809946~blue:757274660839751801}>}
+{=(imposters):{m:trunc({server(members)}/10)}}
+. 　　　。　　　　•　 　ﾟ　　。 　　.
+
+　　　.　　　 　　.　　　　　。　　 。　. 　
+
+.　　 。　　　ﾟ　　 {emoji} 。 . 　　 • 　　　　•
+
+　　ﾟ　　 {target(name)} was{#:, not, not, not, not} An Impostor.　 。　•
+
+　.　　　'　　{imposters} Impostor{if({imposters}!=1):s} remain{if({imposters}==1):s}.　　。　　ﾟ
+
+　　。　　ﾟ　　　•　　　. 　ﾟ　　　　'　 .
+
+{=(COMMENT):This tag is not mine, credits go to Raffael#7777 in Carl-Bot Support}
