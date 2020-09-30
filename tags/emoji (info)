@@ -1,0 +1,11 @@
+{=(COMMENT):Creates the actual info about the emoji.}
+{embed(color):#91fbff}
+{=(data):{replace(<,):{args(1):>}}}
+{=(id):{data(0)::}}
+{=(name):{data(-1)::}}
+{=(animated):{if({data(1)::}==a):true|false}}
+{=(format):{if({animated}==true):gif|png}}
+{=(url):https://cdn.discordapp.com/emojis/{id}.{format}}
+<{url}>
+
+{c:cembed {channel(id)} {"title":"Emoji info","description":"**Name:** {name}\n**ID:** {id}\n**Animated:** {animated}\n[Image Link]({url})","thumbnail":{"url":"{url}"},"color":5198940}}
