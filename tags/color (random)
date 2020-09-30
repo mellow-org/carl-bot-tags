@@ -1,0 +1,129 @@
+{=(comment):Change the prefix}
+{=(prefix):[-]}
+
+{=(li):0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f}
+
+{=(inp):{if({in(#):{1}}==true):{1}|{if({in(,):{1}}==true):{cycle({m:trunc({list(0):{1}}/16^1)}):{li}}{cycle({m:trunc({list(0):{1}}/16^0)}):{li}}{cycle({m:trunc({list(1):{1}}/16^1)}):{li}}{cycle({m:trunc({list(1):{1}}/16^0)}):{li}}{cycle({m:trunc({list(2):{1}}/16^1)}):{li}}{cycle({m:trunc({list(2):{1}}/16^0)}):{li}}|{cycle({m:trunc({1}/16^5)}):{li}}{cycle({m:trunc({1}/16^4)}):{li}}{cycle({m:trunc({1}/16^3)}):{li}}{cycle({m:trunc({1}/16^2)}):{li}}{cycle({m:trunc({1}/16^1)}):{li}}{cycle({m:trunc({1}/16^0)}):{li}}}}}
+{=(inp):{if({in(m):{1}}==true):{user(color)}|{inp}}}
+{=(inp):{if({user(id)}!={target(id)}):{target(color)}|{inp}}}
+
+{=(st):{lower:{replace(,,):{replace(#,):{inp}}}}}
+
+{=(hex5):{or({in(h):{args}}==true|{args(1+)}==):{rand:{li}}|{list(1):{st}}}}
+{=(hex4):{or({in(h):{args}}==true|{args(1+)}==):{rand:{li}}|{list(2):{st}}}}
+{=(hex3):{or({in(h):{args}}==true|{args(1+)}==):{rand:{li}}|{list(3):{st}}}}
+{=(hex2):{or({in(h):{args}}==true|{args(1+)}==):{rand:{li}}|{list(4):{st}}}}
+{=(hex1):{or({in(h):{args}}==true|{args(1+)}==):{rand:{li}}|{list(5):{st}}}}
+{=(hex0):{or({in(h):{args}}==true|{args(1+)}==):{rand:{li}}|{list(6):{st}}}}
+
+
+{=(rgb5):{replace(a,10):{replace(b,11):{replace(c,12):{replace(d,13):{replace(e,14):{replace(f,15):{hex5}}}}}}}}
+{=(rgb4):{replace(a,10):{replace(b,11):{replace(c,12):{replace(d,13):{replace(e,14):{replace(f,15):{hex4}}}}}}}}
+{=(rgb3):{replace(a,10):{replace(b,11):{replace(c,12):{replace(d,13):{replace(e,14):{replace(f,15):{hex3}}}}}}}}
+{=(rgb2):{replace(a,10):{replace(b,11):{replace(c,12):{replace(d,13):{replace(e,14):{replace(f,15):{hex2}}}}}}}}
+{=(rgb1):{replace(a,10):{replace(b,11):{replace(c,12):{replace(d,13):{replace(e,14):{replace(f,15):{hex1}}}}}}}}
+{=(rgb0):{replace(a,10):{replace(b,11):{replace(c,12):{replace(d,13):{replace(e,14):{replace(f,15):{hex0}}}}}}}}
+
+{=(hex):{hex5}{hex4}{hex3}{hex2}{hex1}{hex0}}
+
+{=(rgbr):{m:trunc({rgb5}*16+{rgb4})}}
+{=(rgbg):{m:trunc({rgb3}*16+{rgb2})}}
+{=(rgbb):{m:trunc({rgb1}*16+{rgb0})}}
+
+{=(dec):{m:trunc({rgb5}*16^5+{rgb4}*16^4+{rgb3}*16^3+{rgb2}*16^2+{rgb1}*16^1+{rgb0}*16^0)}}
+
+{=(bin5):{list({rgb5}):0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111}}
+{=(bin4):{list({rgb4}):0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111}}
+{=(bin3):{list({rgb3}):0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111}}
+{=(bin2):{list({rgb2}):0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111}}
+{=(bin1):{list({rgb1}):0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111}}
+{=(bin0):{list({rgb0}):0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111}}
+
+{=(bin):{bin5}{bin4}{bin3}{bin2}{bin1}{bin0}}
+
+{=(json):{if({in(h):{args}}==true):{
+    "fields":[
+        {
+            "name":"`{prefix}color`",
+            "value":"Shows a random color.",
+            "inline":false
+        },
+        {
+            "name":"`{prefix}color #<hexadecimal>`",
+            "value":"Get a color by using hexadecimal.\nExample: `{prefix}color #7289da`",
+            "inline":false
+        },
+        {
+            "name":"`{prefix}color <R,G,B>`",
+            "value":"Get a color using RGB.\nExample: `{prefix}color 114,137,218`",
+            "inline":false
+        },
+        {
+            "name":"`{prefix}color <decimal>`",
+            "value":"Get a color using decimal.\nExample: `{prefix}color 7506394`",
+            "inline":false
+        },
+        {
+            "name":"`{prefix}color <mention>`",
+            "value":"Shows the namecolor of the mentioned user.\nExample: `{prefix}color @Carl-bot#1536`",
+            "inline":false
+        },
+        {
+            "name":"`{prefix}color me`",
+            "value":"Shows your namecolor.",
+            "inline":false
+        },
+        {
+            "name":"`{prefix}color help`",
+            "value":"Shows this message.",
+            "inline":false
+        }
+    ],
+    "color":7506394,
+    "type":"rich",
+    "description":"You can change the prefix used in the examples by replacing `{prefix}` with your prefix at the top of the tag on the [dashboard](https://carl.gg/dashboard/{server(id)}/tags).",
+    "title":"Help for`{prefix}color`"
+}|{
+    "footer":{
+        "text":"{prefix}color help"
+    },
+    "thumbnail":{
+        "url":"https:\/\/dummyimage.com\/128x128\/{hex}\/{hex}f&text=",
+        "proxy_url":"https://imgur.com/kBVpzsG",
+        "width":128,
+        "height":128
+    },
+    "fields":[
+        {
+            "name":"Hexadecimal",
+            "value":"`#{hex}`",
+            "inline":true
+        },
+        {
+            "name":"RGB",
+            "value":"`{rgbr},{rgbg},{rgbb}`",
+            "inline":true
+        },
+        {
+            "name":"Decimal",
+            "value":"`{dec}`",
+            "inline":true
+        },
+        {
+            "name":"RGB%",
+            "value":"{if({m:{rgbr}+{rgbg}+{rgbb}}==0.0):`Can not divide by 0`|`{m:round({rgbr}/({rgbr}+{rgbg}+{rgbb})*1000)/10}%` `{m:round({rgbg}/({rgbr}+{rgbg}+{rgbb})*1000)/10}%` `{m:round({rgbb}/({rgbr}+{rgbg}+{rgbb})*1000)/10}%`}",
+            "inline":true
+        },
+        {
+            "name":"Binary",
+            "value":"`{bin}`",
+            "inline":true
+        }
+    ],
+    "color":{dec},
+    "type":"rich",
+    "url":"https:\/\/www.color-hex.com\/color\/{hex}",
+    "title":"#{hex}"
+}}}
+
+{c:customembed {json}}
