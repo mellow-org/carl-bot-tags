@@ -1,0 +1,46 @@
+{=(comment): If you want the sun-map image shown in the embed, set the image variable below to 1. If you want to hide the sun-map image, set the image variable below to 0.}
+{=(image):1}
+
+{=(comment): For 24h display, put 24 as the value of the notation variable below.}
+{=(comment): For 12h display, put 12 as the value of the notation variable below.}
+{=(notation):24}
+
+{=(comment): If DST is observed, put S as the value of the DST variable below (typically during the summer months for Northern Hemisphere folks).}
+{=(comment): If DST is not observed, put W as the value of the DST variable below. S=Summer (April-October), W=Winter (Nov-March). No space before or after.}
+{=(DST):S}
+{=(comment):Yes, you have to manually change this, I'm not automating it because the dates for when DST starts and ends vary by location, and change year after year.}
+
+{=(comment): BlockDisplay changes how the code block that displays the time colors the numbers and text (colors don't display on mobile). Leave blank for white display. No space before. For more information, check out https://gist.github.com/matthewzring/9f7bbfd102003963f9be7dbcf7d40e51 }
+{=(BlockDisplay):ml}
+
+{=(comment):The list of timezones and houroffsets are paired by value index locations.}
+{=(timezones):UTC Pacific Mountain Central Eastern Newfoundland Britain Germany Moscow India Omsk Jakarta China Japan Sydney NZ}
+{=(Shouroffsets):0 -7 -6 -5 -4 -2.5 1 2 3 5.5 6 7 8 9 10 12}
+{=(Whouroffsets):0 -8 -7 -6 -5 -3.5 0 1 3 5.5 6 7 8 9 11 13}
+
+{=(comment):where the math and formatting are done for the 16 entries in timezones. if this confuses you, don't touch it and ask for help}
+{=(h):3600}
+{=(BD):```{BlockDisplay}
+}
+{=(format):{any({notation}==12|{notation}==12h):%I:%M %p|{any({notation}==24|{notation}==24h):%H:%M|%X}}}
+{=({timezones(1)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(1)}))}):{format}} {strf:%A, %B }{ord:{strf:%-d}},{strf: %Y}```}
+{=({timezones(2)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(2)}))}):{format}}```}
+{=({timezones(3)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(3)}))}):{format}}```}
+{=({timezones(4)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(4)}))}):{format}}```}
+{=({timezones(5)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(5)}))}):{format}}```}
+{=({timezones(6)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(6)}))}):{format}}```}
+{=({timezones(7)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(7)}))}):{format}}```}
+{=({timezones(8)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(8)}))}):{format}}```}
+{=({timezones(9)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(9)}))}):{format}}```}
+{=({timezones(10)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(10)}))}):{format}}```}
+{=({timezones(11)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(11)}))}):{format}}```}
+{=({timezones(12)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(12)}))}):{format}}```}
+{=({timezones(13)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(13)}))}):{format}}```}
+{=({timezones(14)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(14)}))}):{format}}```}
+{=({timezones(15)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(15)}))}):{format}}```}
+{=({timezones(16)}):{BD}{strf({m:trunc({unix}+({h}*{{DST}houroffsets(16)}))}):{format}}```}
+{=(url):https://www.timeanddate.com/scripts/sunmap.php?iso={strf:%Y%m%dT%H%M}}
+{delete}
+{embed(timestamp):now}​
+
+{c:cembed {channel(id)} {"fields":[{"name":"**{timezones(2)}**","value":"{{timezones(2)}}","inline":true},{"name":"**{timezones(3)}**","value":"{{timezones(3)}}","inline":true},{"name":"**{timezones(4)}**","value":"{{timezones(4)}}","inline":true},{"name":"**{timezones(5)}**","value":"{{timezones(5)}}","inline":true},{"name":"**{timezones(6)}**","value":"{{timezones(6)}}","inline":true},{"name":"**{timezones(7)}**","value":"{{timezones(7)}}","inline":true},{"name":"**{timezones(8)}**","value":"{{timezones(8)}}","inline":true},{"name":"**{timezones(9)}**","value":"{{timezones(9)}}","inline":true},{"name":"**{timezones(10)}**","value":"{{timezones(10)}}","inline":true},{"name":"**{timezones(11)}**","value":"{{timezones(11)}}","inline":true},{"name":"**{timezones(12)}**","value":"{{timezones(12)}}","inline":true},{"name":"**{timezones(13)}**","value":"{{timezones(13)}}","inline":true},{"name":"**{timezones(14)}**","value":"{{timezones(14)}}","inline":true},{"name":"**{timezones(15)}**","value":"{{timezones(15)}}","inline":true},{"name":"**{timezones(16)}**","value":"{{timezones(16)}}","inline":true},{"name":"{if({image}==1):**Legend**|​}","value":"{if({image}==1)::sunny: = The Sun's position directly overhead in relation to an observer.\n:full_moon: = The Moon's position at its zenith in relation to an observer.|​}","inline":false}],"title":"{timezones(1)}","description":"{{timezones(1)}}","image":{"url":"{if({image}==1):{url}}"},"author":{"name":"All formats given in {any({format(1)::}==%H|{format(1)::}==%-H|{format(1)::}==%X):24h|{any({format(1)::}==%I|{format(1)::}==%-I):12h}} notation","icon_url":"https://i.imgur.com/CIl9Dyp.png"},"color":2793880,"footer":{"icon_url":"","text":"{if({image}==1):Sunmap image courtesy of timeanddate.com}"}}}
