@@ -1,0 +1,23 @@
+{=(COMMENT):#### Converts your text into and UwU version of it. ####}
+{=(COMMENT):Original tag by Neoon#5790, edits made by me!}
+{=(input):{args}}
+{=(checkInput):{if(!={input}):true|false}}
+
+{=(COMMENT):Replaces certain letters with certain phrases.}
+{=(step1):{replace(u,uwu):{input}}}
+{=(step2):{replace(U,UwU):{step1}}}
+{=(step3):{replace(o,owo):{step2}}}
+{=(step4):{replace(O,OwO):{step3}}}
+{=(step5):{replace(l,w):{step4}}}
+{=(step6):{replace(r,w):{step5}}}
+{=(step7):{replace(L,W):{step6}}}
+{=(output):{replace(R,W):{step7}}}
+
+{=(errormsg):```Woopsie, youwu didn't prowovide any awguwuments fowow me towo uwuify! Pwease twy again :(```}
+
+{=(successmsg):**Input:**```{input}```**Output:**```{output}```}
+
+{=(uwumsg):{if({checkInput}==true):{successmsg}|{errormsg}}}
+{=(footermsg):{if({checkInput}==true):Text uwuifyed by|}}
+
+{c:cembed {channel(id)} {"title":"The UwU-Ifiyer ","description":"{uwumsg}","color":14501842,"footer":{"icon_url":"{user(avatar)}","text":"{footermsg} {user(proper)}"}}}
