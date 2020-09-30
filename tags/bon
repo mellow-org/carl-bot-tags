@@ -1,0 +1,7 @@
+{=(COMMENT):#### Has a 5% chance of banning the target (respects role hierarchy). ####}
+{=(COMMENT):Made by someone in Dank Memer Official (don't remember who unfortunately). ####}
+{=(msg):Banned **{target(proper)}**.}
+{{#:c:ban {target(id)} 0 **you got BON'D KID**,95|msg}}
+{react: <:stanky:661978710513287175>}
+{=():}
+{{if({user(id)}!=ENTER BASE ROLE ID HERE):require(You aren't powerful enough for this tag): ENTER RESTRICTED ROLE IDS HERE|}}
