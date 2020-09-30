@@ -1,0 +1,26 @@
+{=(lib):0 1 2 3 4 5 6 7 8 9 A B C D E F}
+{=(trim):{replace(#,):{upper:{args}}}}
+{=(spaced):{replace(, ):{trim}}}
+{=(h1):{index({spaced(2)}):{lib}}}
+{=(h2):{index({spaced(3)}):{lib}}}
+{=(h3):{index({spaced(4)}):{lib}}}
+{=(h4):{index({spaced(5)}):{lib}}}
+{=(h5):{index({spaced(6)}):{lib}}}
+{=(h6):{index({spaced(7)}):{lib}}}
+{=(msg):Follow the `colorinfo` command with a hexadecimal color.  Ex-`#000000` through `#FFFFFF`}
+{=(error):{if({args}==):{msg}|{if({spaced(9)}!={spaced}):Your entry is too long.
+{msg}|{any({h1}==-1|{h2}==-1|{h3}==-1|{h4}==-1|{h5}==-1|{h6}==-1):That is not a valid hexadecimal color.
+{msg}}}}}
+{=(hex):{if({error}==):{trim}|}}
+{embed(color):{if({error}==):#{hex}|#4f545c}}
+{=(img):https://www.htmlcsscolor.com/preview/128x128/{hex}.png}
+{=(ccolors):https://convertingcolors.com/hex-color-{hex}.html}
+{=(colorpedia):https://encycolorpedia.com/{hex}}
+{=(htmlcss):https://www.htmlcsscolor.com/hex/{hex}}
+{=(colorhex):https://www.color-hex.com/color/{hex}}
+{=(colorate):http://colorate.azurewebsites.net/Color/{hex}}
+{=(colorhexa):https://www.colorhexa.com/{hex}}
+{{if({error}==):silence}}
+{c:choose {if({error}==):|{error},{error}}}
+
+{c:cembed {channel(id)} {"title":"Color info for #{hex}:","description":"[Convertingcolors.com]({ccolors})\n[Encycolorpedia.com]({colorpedia})\n[Htmlcsscolor.com]({htmlcss})\n[Color-Hex.com]({colorhex})\n[Colorate Palettes]({colorate})\n[Colorhexa.com]({colorhexa})","image":{"url":"{if({error}==):{img}|error}"},"color":5198940,"footer":{"icon_url":"{user(icon)}","text":"Info for your colors"}}}
