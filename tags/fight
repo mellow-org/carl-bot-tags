@@ -1,0 +1,19 @@
+{=(COMMENT):#### Original design by ! SpinaChant#1860, edits are by me. ####}
+{=(new):{#:-~+}}
+{=(f1):{user(proper)}}
+{=(f2):{if({in(<@):{args}}==true):{target(proper)}|{server(random)}}}
+{=(p1):1}
+{=(p2):{m:trunc(1{new}1)}}
+{=(winner):{if({p1}>{p2}):{f1}|{f2}}}
+{=(loser):{if({p2}==0):{f2}|{f1}}}
+{=(outcome):{#:Beat the crap out of `{loser}`~Folded `{loser}` like a lawn chair~Punched `{loser}` into the stratosphere~Hit `{loser}` with that right hook~Gave `{loser}` that 2 piece mc nugget~Decked `{loser}`~Slapped the shit out of `{loser}`}}
+
+{=(COMMENT):The images at the bottom of the embed. Imgur is the best, other sources might not work.}
+{=(img):{#:https://media.giphy.com/media/e37RbTLYjfc1q/giphy.gif~https://media.giphy.com/media/l1J3G5lf06vi58EIE/giphy.gif~https://media.giphy.com/media/tWHk9WtvGC4Sc/giphy.gif~https://media.giphy.com/media/l0Iyq2Zfew8ecJpFm/giphy.gif~https://media.giphy.com/media/lgcaIKboeo8ZW/giphy.gif~https://media.giphy.com/media/x6I3pGtblFtDO/giphy.gif~https://media.giphy.com/media/mMWgoBk9sqVMI/giphy.gif~https://media.giphy.com/media/yBG8v2muwb3zi/giphy.gif~https://media.giphy.com/media/X0YkzoS6UqVfa/giphy.gif}}
+
+{=(COMMENT):Makes the embed have a random color.}
+{=(i):1,2,3,4,5,6,7,8,9,0} 
+{=(color):{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}}
+
+{=(COMMENT):The tag's output.}
+{c:cembed {channel(id)} {"title":"Winner: {winner} Loser: {loser}","description":"`{winner}` {outcome}","image":{"url":"{img}"},"author":{"name":"{winner} Won!!","icon_url":""},"color":{color}}}
