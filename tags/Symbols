@@ -1,0 +1,26 @@
+{=(COMMENT):#### A tag for cool symbols for general use. ####}
+{=(COMMENT):#### Add more symbols as you see fit. ####}
+
+{=(COMMENT):Makes the embed color random.}
+{=(i):1,2,3,4,5,6,7,8,9,0} 
+{=(color):{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}}
+
+{=(COMMENT):The symbols listed in the tag.}
+{=(linput):{lower:{1}}}
+{=(keywords):stars brackets arrows hearts squares triangles corners lines}
+{=({linput}):**Your options:** `stars, brackets, arrows, hearts, squares, triangles, corners or lines.`}
+{=(stars):`✡ ★ ☆ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰✦ ✧ ⁂ ⁎ ⁑ ✢ ✣ ✤ ✥ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿ ❀ ❁ ❂ ❃ ❇ ❈ ❉ ❊ ❋ ❄ ❆ ❅ ⋆ ≛`}
+{=(brackets):`〈 〉 《 》 「 」 『 』 【 】 〔 〕 ︵ ︶ ︷ ︸ ︹ ︺ ︻ ︼ ︽ ︾ ︿ ﹀ ﹁ ﹂ ﹃ ﹄ ﹙ ﹚ ﹛ ﹜ ﹝ ﹞ ﹤ ﹥ （ ） ＜ ＞ ｛ ｝ 〖 〗 〘 〙 〚 〛 « » ‹ › 〈 〉 〱`}
+{=(arrows):`↕ ↖ ↗ ↘ ↙ ↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↢ ↣ ↤ ↥ ↦ ↧ ↨ ↩ ↪ ↫ ↬ ↭ ↮ ↯ ↰ ↱ ↲ ↳ ↴ ↶ ↷ ↸ ↹ ↺ ↻ ↼ ↽ ↾ ↿ ⇀ ⇁ ⇂ ⇃ ⇄ ⇅ ⇆ ⇇ ⇈ ⇉ ⇊ ⇋ ⇌ ⇍ ⇎ ⇏ ⇕ ⇖ ⇗ ⇘ ⇙ ⇚ ⇛ ⇜ ⇝ ⇞ ⇟ ⇠ ⇡ ⇢ ⇣ ⇤ ⇥ ⇦ ⇧ ⇨ ⇩ ⇪ ⌅ ⌆ ⌤ ⏎ ▶ ☇ ☈ ☊ ☋ ☌ ☍ ➔ ➘ ➙ ➚ ➛ ➜ ➝ ➞ ➟ ➠ ➡ ➢ ➣ ➤ ➥ ➦ ➧ ➨ ➩ ➪ ➫ ➬ ➭ ➮ ➯ ➱ ➲ ➳ ➴ ➵ ➶ ➷ ➸ ➹ ➺ ➻ ➼ ➽ ➾ ⤴ ⤵ ↵ ↓ ↔ ← → ↑ ⌦ ⌫ ⌧ ⇰ ⇫ ⇬ ⇭ ⇳ ⇮ ⇯ ⇱ ⇲ ⇴ ⇵ ⇷ ⇸ ⇹ ⇺ ⇑ ⇓ ⇽ ⇾ ⇿ ⬳ ⟿ ⤉ ⤈ ⇻ ⇼ ⬴ ⤀ ⬵ ⤁ ⬹ ⤔ ⬺ ⤕ ⬶ ⤅ ⬻ ⤖ ⬷ ⤐ ⬼ ⤗ ⬽ ⤘ ⤝ ⤞ ⤟ ⤠ ⤡ ⤢ ⤣ ⤤ ⤥ ⤦ ⤪ ⤨ ⤧ ⤩ ⤭ ⤮ ⤯ ⤰ ⤱ ⤲ ⤫ ⤬ ⬐ ⬎ ⬑ ⬏ ⤶ ⤷ ⥂ ⥃ ⥄ ⭀ ⥱ ⥶ ⥸ ⭂ ⭈ ⭊ ⥵ ⭁ ⭇ ⭉ ⥲ ⭋ ⭌ ⥳ ⥴ ⥆ ⥅ ⥹ ⥻ ⬰ ⥈ ⬾ ⥇ ⬲ ⟴ ⥷ ⭃ ⥺ ⭄ ⥉ ⥰ ⬿ ⤳ ⥊ ⥋ ⥌ ⥍ ⥎ ⥏ ⥐ ⥑ ⥒ ⥓ ⥔ ⥕ ⥖ ⥗ ⥘ ⥙ ⥚ ⥛ ⥜ ⥝ ⥞ ⥟ ⥠ ⥡ ⥢ ⥤ ⥣ ⥥ ⥦ ⥨ ⥧ ⥩ ⥮ ⥯ ⥪ ⥬ ⥫ ⥭ ⤌ ⤍ ⤎ ⤏ ⬸ ⤑ ⬱ ⟸ ⟹ ⟺ ⤂ ⤃ ⤄ ⤆ ⤇ ⤊ ⤋ ⭅ ⭆ ⟰ ⟱ ⇐ ⇒ ⇔ ⇶ ⟵ ⟶ ⟷ ⬄ ⬀ ⬁ ⬂ ⬃ ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬌ ⬍ ⟻ ⟼ ⤒ ⤓ ⤙ ⤚ ⤛ ⤜ ⥼ ⥽ ⥾ ⥿ ⤼ ⤽ ⤾ ⤿ ⤸ ⤺ ⤹ ⤻ ⥀ ⥁ ⟲ ⟳`}
+{=(hearts):`♥ ♡ ❤ ❥ ❣ ❦ ❧ დ ღ ۵ ლ ও ლ ❣️`}
+{=(squares):`❏ ❐ ❑ ❒ ▀ ▁ ▂ ▃ ▄ ▅ ▆ ▇ ▉ ▊ ▋ █ ▌ ▐ ▍ ▎ ▏ ▕ ░ ▒ ▓ ▔ ▬ ▢ ▣ ▤ ▥ ▦ ▧ ▨ ▩ ▪ ▫ ▭ ▮ ▯ ☰ ☲ ☱ ☴ ☵ ☶ ☳ ☷ ▰ ▱ ◧ ◨ ◩ ◪ ◫ ∎ ■ □ ⊞ ⊟ ⊠ ⊡ ❘ ❙ ❚ 〓 ◊ ◈ ◇ ◆ ⎔ ⎚ ☖ ☗`}
+{=(triangles):`◄ ▲ ▼ ► ◀ ◣ ◥ ◤ ◢ ▶ ◂ ▴ ▾ ▸ ◁ △ ▽ ▷ ∆ ∇ ⊳ ⊲ ⊴ ⊵ ◅ ▻ ▵ ▿ ◃ ▹ ◭ ◮ ⫷ ⫸ ⋖ ⋗ ⋪ ⋫ ⋬ ⋭ ⊿ ◬ ≜ ⑅`}
+{=(corners):`﹄ ﹃ ﹂ ﹁ ┕ ┓ └ ┐ ┖ ┒ ┗ ┑ ┍ ┙ ┏ ┛ ┎ ┚ ┌ ┘ 「 」 『 』 ˩ ˥ ├ ┝ ┞ ┟ ┠ ┡ ┢ ┣ ┤ ┥ ┦ ┧ ┨ ┩ ┪ ┫ ┬ ┭ ┮ ┯ ┰ ┱ ┲ ┳ ┴ ┵ ┶ ┷ ┸ ┹ ┺ ┻ ┼ ┽ ┾ ┿ ╀ ╁ ╂ ╃ ╄ ╅ ╆ ╇ ╈ ╉ ╊ ╋ ╒ ╕ ╓ ╖ ╔ ╗ ╘ ╛ ╙ ╜ ╚ ╝ ╞ ╡ ╟ ╢ ╠ ╣ ╥ ╨ ╧ ╤ ╦ ╩ ╪ ╫ ╬ 〒 ⊢ ⊣ ⊤ ⊥ ╭ ╮ ╯ ╰ ⊦ ⊧ ⊨ ⊩ ⊪ ⊫ ⊬ ⊭ ⊮ ⊯ ⊺ 〦 〧 〨 ˦ ˧ ˨ ⑁ ⑂ ⑃ ∟`}
+{=(lines):`│ ┃ ╽ ╿ ╏ ║ ╎ ┇ ︱ ┊ ︳ ┋ ┆ ╵ 〡 〢 ╹ ╻ ╷ 〣 ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷ ≡ ✕ ═ ━ ─ ╍ ┅ ┉ ┄ ┈ ╌ ╴ ╶ ╸ ╺ ╼ ╾ ﹉ ﹍ ﹊ ﹎ ︲ ⑆ ⑇ ⑈ ⑉ ⑊ ⑄ ⑀ ︴ ﹏ ﹌ ﹋ ╳ ╲ ╱ ︶ ︵ 〵 〴 〳 〆 ᐟ ‐ ⁃ ⎯ 〄`}
+
+{=(COMMENT):The tag's final output.}
+{=(capital):{replace( a, A):{replace( b, B):{replace( c, C):{replace( h, H):{replace( l, L):{replace( s, S):{replace( t, T): {linput}}}}}}}}}
+{=(title):{if({contains({linput}):{keywords}}==true):{capital}|Cool Symbols!}}
+{=(content):{{linput}}}
+
+{c:cembed {channel(id)} {"title":"<a:purplefire:696233111968677921> {title} <a:purplefire:696233111968677921>","description":"\n{content}","thumbnail":{"url":"{server(icon)}"},"color":{color},"footer":{"icon_url":"{user(avatar)}","text":"Symbols for embeds and other stuff - Tag Credits: Lotua"}}}
