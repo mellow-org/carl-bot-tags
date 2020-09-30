@@ -1,0 +1,17 @@
+{=(val1):{m:((cos({target(id)})*PI)*0.5)+0.5}}
+{=(val4):{if({target(id)}==474727196980674561):0|{rand:4|0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,7|69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,15|100}}}
+ {=(msg1):{rand: <a:gay:751542309950062653>,<a:gayyoshi:706717686759161907>,<a:aGay:585107144811216926>,<a:ccHeartRainbowWave:675854811886911499>,<a:KablePepe:632124348752330762>} <@{target(id)}>, you are **{val4}%** gay!}
+{=(msg2):{rand: <a:gay_dank:719103737225936907> , <a:gay:565676661367111680> , <:GAY:396104938528178178> , <a:GayDoggo:465859667541884929> , <:8513_gaysper_gay:720729364211302592> ,<:4769_Heart_Gay:720729506431631410>} <@{target(id)}> is **{val4}%** gay!}
+{embed(color):{target(color)}}
+
+{=(haha1):Not that gay tbh}
+{=(haha2):Kinda gay ngl}
+{=(haha3):Definitely gay lol}
+{=(haha4):So gay it hurts oof}
+
+{=(hoho):{if({val4}<25):{haha1}|{haha2}}}
+{=(hehe):{if({val4}<75):{haha3}|{haha4}}}
+
+{=(link):http://www.yarntomato.com/percentbarmaker/button.php?barPosition={val4}&leftFill=%23FF99FF}
+
+{c:cembed {channel(id)} {"title":"{if({val4}==100):🎉MAX GAY!!!🎉} {If({val4}==69):69 GAY !!} ","description":"{if({target}=={user}):{msg1} | {msg2}}","image":{"url":"{link}"},"color":5198940,"footer":{"icon_url":"{target(icon)}","text":"{if({target(id)}==474727196980674561):Haha OWNER ISN'T GAY!|{if({val4}<50):{hoho}|{hehe}}}"}}}
