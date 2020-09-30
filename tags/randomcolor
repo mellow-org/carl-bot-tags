@@ -1,0 +1,5 @@
+{=(COMMENT):#### Takes a role and gives it a random color whenever this tag is issued. ####}
+{c:role color ENTER ROLE ID HERE {=(i):1,2,3,4,5,6,7,8,9,0,a,b,c,d,e,f}
+{=(hex):{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}{rand:{i}}}
+{#:#{hex}}}
+{require(whatever message you want when someone who's not allowed tries to use this tag <:z_HaH:690174822273253411>):ENTER RESTRICTION ID HERE}
