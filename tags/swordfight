@@ -1,0 +1,36 @@
+{=(COMMENT):Another tag brought to you by the smart people in Carl-Bot Support, specifically ! SpinaChant#1860.}
+{silent}
+{=():}
+{=(largs):{lower:{args}}}
+{=(p1):{user(proper)}}
+{=(p2):{if({in(<@):{args(2)}}==false):{server(random)}|{target(proper)}}}
+{=(diamond):85}
+{=(steel):77}
+{=(iron):65}
+{=(stick):1}
+{=(emoji1):<:diamondsword:731616456826945619>}
+{=(emoji2):⚔️}
+{=(emoji3):<:stick:731625393345396857>}
+{=(emoji4):<:ironsword:731617263438004268>}
+{=(integer):{if({largs(1)}==diamond):{diamond}|{if({largs(1)}==sitck):{stick}|{if({largs(1)}==steel):{steel}|{if({largs(1)}==iron):{iron}}}}}}
+{=(output):{rand:{integer}|{p1} Won!~{p2} Won!}}
+{=(swords):{if({largs(1)}==diamond):Diamond|{if({largs(1)}==steel):Steel|{if({largs(1)}==iron):Iron|
+{if({largs(1)}==stick):Stick}}}}}
+{=(randswords):{#:Stick~Diamond~Steel~Iron}}
+{=(emojis):{if({swords}==Diamond):{emoji1}|{if({swords}==Steel):{emoji2}|{if({swords}==Stick):{emoji3}|{if({swords}==Iron):{emoji4}}}}}}
+{=(randemoji):{if({randswords}==Diamond):{emoji1}|{if({randswords}==Steel):{emoji2}|{if({randswords}==Stick):{emoji3}|{if({randswords}==Iron):{emoji4}}}}}}
+{=(newjson):{"title":"{emojis} V.S {randemoji}","description":"`{p1}` V.S `{p2}`\n\n{output}","author":{"name":"{swords} V.S {randswords}","icon_url":"{user(icon)}"},"color":13632027,"footer":{"text":"GG!"}}}
+
+{=(diamondstats):{"fields":[{"name":"Damage💥","value":"87","inline":true},{"name":"Durability⏰","value":"100","inline":true},{"name":"Win Percentage🔋","value":"85%","inline":true}],"title":"Diamond Sword stats {emoji1}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":4886754}}
+{=(steelstats):{"fields":[{"name":"Damage💥","value":"75","inline":true},{"name":"Durability⏰","value":"82","inline":true},{"name":"Win Percentage🔋","value":"77%","inline":true}],"title":"Steel Sword stats {emoji2}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":10197915}}
+{=(stickstats):{"fields":[{"name":"Damage💥","value":"5","inline":true},{"name":"Durability⏰","value":"2","inline":true},{"name":"Win Percentage🔋","value":"1%","inline":true}],"title":"Stick stats {emoji3}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":13727530}}
+{=(ironstats):{"fields":[{"name":"Damage💥","value":"70","inline":true},{"name":"Durability⏰","value":"83","inline":true},{"name":"Win Percentage🔋","value":"65%","inline":true}],"title":"Iron Swords stats {emoji3}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":16777215}}
+
+
+
+{=(options):iron stick steel diamond}
+{=(outcome):{{if({in({largs(1)}):{options}}==true):c: cembed {channel(id)} {newjson}}}}
+{=(check):{if({largs(2)}==diamond):{diamondstats}|{if({largs(2)}==steel):{steelstats}|{if({largs(2)}==stick):{stickstats}|{if({largs(2)}==iron):{ironstats}}}}}}
+{=(json):{{if({largs(1)}==stats):c:cembed {channel(id)} {check}}}}
+{if({largs(1)}==stats):{json}|{if({largs(1)}==):You need to specify a sword!|{if({in({largs(1)}):{options}}==false):That isn't a valid sword!|{outcome}}}}
+{override}
