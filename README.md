@@ -1,10 +1,11 @@
 # [Carl Tags](https://docs.carl.gg/tags-and-triggers/tags-advanced-usage/ "All the info you could possibly need!")
 A collection of Carl-Bot tags I have made this year.
 Some of these tags are NOT mine, credit is given where applicable! Please do not remove the credits and respect the creators!
+You do not need to give me credit if you do take/modify my tags but it would be appreciated!
 I'm still learning so please do suggest stuff and flag any issues!
 
 # What are these?
-Carl-Bot is an amazing bot, and along with moderation features, has its own nested language called TagScript!
+[Carl-Bot](https://discord.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471 "Cool Bot!") is an amazing bot, and along with moderation features, has its own nested language called TagScript!
 With it, we are able to create custom commands that can do whatever you want it to! (There are some limits, those are described in the docs.)
 These commands are called "tags" by the bot and the community, and are used for moderation, fun and server upkeep.
 The language itself is non-traditional, and took me a while to learn.
