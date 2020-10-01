@@ -1,0 +1,53 @@
+{=(COMMENT):#### Adds a relevant pepe face to your sentence. ####}
+{delete}
+
+{=(COMMENT):The picture IDs. DO NOT CHANGE!!!}
+{=(jpg):batman fading musclerainbow rat shower thor}
+
+{=(png1):8bitpepe 99ping ahegao anger angry angryping annoyed argh army aww banned beefat blanket blanket1 blankiethumbsup blind bloodyhand boomer box boxing bread bulbasaur burp C cake caveman checkpinned chick chicken chillbruh chu CIA clown collga comfy communist cool cooljuice copter cosydetect cowboyhypers crappyburger creep cringe cringegrin cryingsip crypraying cucumber daeneryscoffee daenerysheart daeneryshi daeneryshide daenerysstare dead djgym doctor dragon dragon1 eggplant elf elon epic evilthink eyes F fat FBI feelsbanman feelsbomberman feelscuteman feelsdogman feelseggman feelsevilman feelsgoodman feelshohoman feelsminecraftman feelsmugman feelsnonitroman feelsokman feelsreal feelssurrenderman feelsupman festive fidgetspinner finger fingerping firefighter fireman flex foreveralonepepe fuckyou ga galaxy gamer gang gangster gift glasses goodmusic griffin gud gun gunmad gunnervous halloween hands handskaido handsom happy happy2 happygun happygym heart hey hitman hitormiss hmm hmmsmale hmmstare hohoho honestburger hoody hug huggymleft hyper hypermonkas ironman jackeryz jenospaladins jesuechrist johnnysins johnwick katakuri kawaii kawaii1 king kiss kms knife knifeface laugh laughpoint likeslgbt linkhype lmaoxd love lovepanties lovesbalance lovesbravery lovesbrilliance lowIQ luffy luke lul lurking}
+
+{=(png2):madsit madswordgrr maga magic meltdown merrychristmas milsugi mingo mining minion mlg mon monakas monkachrist monkacn monkahmm monkamega monkaOO monkarex MonkaS monkasnug monkastab monkat MonkaTOS myjam naked nani needhealingman ninja no ohdear ohno ohyeah ok okayboomer okayzoomer okboomer old omg pain pampers panties pants pantythief pepe pica pikachu ping pinged pink pinkhair platypus poop pop popcorn pope power pumpkin punch queen rage retard retarded retrothink Rex rotanime rotcry rotflagru rotjam rotjuice rotking rotlove rotprideflag rotzoom ruby rules sad sadcat sadgym sadhug sadrose saiyan salute samurai sanjilaugh santa santaaa sendnudes sexy shades shadesHD shhh shush sip sip1 siprondo skibbies sleep sleepdrool sleeping sliceu slippy slowpoke smart smh smurfing sneaky sniff sniper soldier spongebob stare staringoverwall straightface strawhat strong stronk suit surgeon sus suspicious sweethugs sweetplshug sweetprotection sweetsadblob sweetsadness sweetshrug sword teen thatisgay think thinking thismuch thorheartbroken tirsk topcat TOS trash triple trump trump1 trumpwithflag tux tuxedotoast twitter ubc ughping uhh umaru unoreverse usoppcross vader vapepen vodka voteno voteyes wallpeek water weebsin weebsout weirdsmilecoffee why wink wise woke wolf woodysip woolenhat woollenpanties xd xmas xmas1 xmas2 yellow yikes youpostedcringe zeroping}
+
+{=(png):{png1} {png2}}
+
+{=(gif):3e 8bithappy ak47 angrywalkback arrivefinger autistclap babybottle backup blowneyes boobs boom bruhh cadeirante champzoom chilling clap clap1 clownpie clownwalk coverup crabby crying cryingwithhand dance dance1 dancinghehe dash dj drinking dump eggplant1 eggplant2 exited fastjam fbiopenup fedora flame giggle gimmehug giraffe haha handupspasm hehe hide hide1 honkhonk howdy ilovepanda jam kek lazer leave leavetocave leddit lightsaber lightsaberdance LMAO looking looking1 lookingoverbook maddecline madflickleave madsaiyanleave mib MJ mmhm monkalift needahug nice nitro nono nou nuke pace paint patting pls pizza POG poof punch1 rainbow rainbowsmile roasted run sadrain santarun shaderemoving shake shoot slowweirdleave smoker sob squid stoned thatsmyjam toiletjetpack triggered triggered1 turbopoopoo wave weed weewoo weightlift weirdleave wheelchairrocket wow WTFeyes xmas3 yayrunning yeehaw yesyes youserious}
+
+{=(COMMENT):Main arguments.}
+{=(option):{args(1)}}
+{=(cmt):{args(2+)}}
+
+{=(allpepe):1-451}
+
+{=(allname):{jpg} {png} {gif} list1 list2 list3 help}
+
+{=(optionsornot):{contains({option}):{allname}}}
+
+{=(defaultopt):{if({optionsornot}==false):{if({option}!=):{option}|{range:{allpepe}}}|norun}}
+
+{=(locnum):{if({optionsornot}==false):{defaultopt}|{m:trunc({index({option}):{allname}}+1)}}}
+
+{=(pepename):{allname({locnum})}}
+
+{=(extn):{if({locnum}<7):.jpg|{if({locnum}<338):.png|.gif}}}
+
+
+{break({optionsornot}==false):
+{{if({optionsornot}==false):c|=(comment)}:cembed {channel(id)} {"description":"{if({cmt}!=):{cmt}}","thumbnail":{"url":"https://raw.githubusercontent.com/TushBT/Carlpepe/master/all/{pepename}{extn}"},"author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":3553599,"footer":{"text":"#{locnum} #{pepename}"}}}
+}
+
+
+{break({optionsornot}==true):
+
+{{all({optionsornot}==true|{option}!=help|{option}!=list1|{option}!=list2|{option}!=list3):c|=(comment)}:cembed {channel(id)} {"description":"{if({cmt}!=):{cmt}}","thumbnail":{"url":"https://raw.githubusercontent.com/TushBT/Carlpepe/master/all/{pepename}{extn}"},"author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":3553599,"footer":{"text":"#{locnum} #{pepename}"}}}
+
+
+
+{{all({optionsornot}==true|{option}==list1):c|=(comment)}:cembed {channel(id)} {"title":"Pepe List1","description":"```List 1 of 3```\nBelow is list1 of pepe emotes names.\n\n**For list2 type** : `[prefix]pepe list2`\n\nUsage :\n```[prefix]pepe [emotesname] i so lonely```\nExample : `[prefix]pepe sad i so lonely`\n\nJPG\n```{jpg}```\nPNG\n```{png1}```","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
+
+{{all({optionsornot}==true|{option}==list2):c|=(comment)}:cembed {channel(id)} {"title":"Pepe List2","description":"```List 2 of 3```Below is list2 pepe emotes names.\n\n**For list3 type** : `[prefix]pepe list3`\n\nUsage :\n```[prefix]pepe [emotesname] i so lonely```\nExample : `[prefix]pepe sad i so lonely`\n\nPNG\n```{png2}```","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
+
+{{all({optionsornot}==true|{option}==list3):c|=(comment)}:cembed {channel(id)} {"title":"Pepe List3","description":"```List 3 of 3```Below is list3 pepe emotes names.\n\nUsage :\n```[prefix]pepe [emotesname] i so lonely```\nExample : `[prefix]pepe sad i so lonely`\n\nGIF\n```{gif}```","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
+
+{{all({optionsornot}==true|{option}==help):c|=(comment)}:cembed {channel(id)} {"title":"Pepe Help","description":"This Tag give Pepe emotes with user comment. There are 450 emotes available. This can make conversation fun.\n\nBelow are different options available.\n\nNote: If no option is mentioned it will generate a random emote.\n\n1️⃣ Get pepe emote using ID.\nSyntax : \n```[prefix]pepe [ID] YourCommenthere```\nExample : `[prefix]pepe 238 I am so lonely`\n\n2️⃣ Get pepe emotes using its name.\nSyntax : \n```[prefix]pepe [EMOTENAME] YourCommenthere```\nExample : `[prefix]pepe sad I am so lonely`\n\n3️⃣ Get all emotes names list.\nSyntax : \n```[prefix]pepe list1```\nExample : `[prefix]pepe list1`\nNote: Emotes names are divided in three lists : list1, list2 and list3\n\n4️⃣ Help option\nSyntax : \n```[prefix]pepe help```\n\nTag made by TushBT\n\n**[Invite](https://discordapp.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471) Carl Bot to your server NOW.**\n[Support](https://www.patreon.com/carlbot) Carl and get extra perks likes Levels, Music, Voice link and many more check [patreon](https://www.patreon.com/carlbot).","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
+
+}
