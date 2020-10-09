@@ -1,0 +1,50 @@
+{=(COMMENT):#### This is a tag that allows users to give themselves ping roles when reaction roles are broken. ####}
+{=(COMMENT):Original layout by KableKompany#0001, big thanks to tintin#9999 for helping!}
+{=(exe):c:}
+
+{=(COMMENT):Rename the variables and add the role IDs here.}
+{=(announcements):754401757144285204}
+{=(flashSale):758662703949545484}
+{=(giveaways):754453793902690354}
+{=(heists):754471933474766949}
+{=(events):754471991876124773}
+{=(flashGive):754471959487840296}
+
+{=(COMMENT):Adds the roles here, you can change the variable names to suit your needs.}
+{=(+):{exe}rank custom +{{args(2)}}}
+{=(-):{exe}rank custom -{{args(2)}}}
+
+{=(COMMENT):Adds ALL the roles here, only change the variable names.}
+{=(all):{exe}rank custom +{announcements} +{flashSale} +{giveaways} +{heists} +{events} +{flashGive}}
+{=(none):{exe}rank custom -{announcements} -{flashSale} -{giveaways} -{heists} -{events} -{flashGive}}
+
+{=(COMMENT):Do NOT touch anything here unless you know what you're doing.}
+{=():}
+{=(added):{if({args(2)}==announcements):{announcements}|{if({args(2)}==flashsales):{flashSale}|{if({args(2)}==giveaways):{giveaways}|{if({args(2)}==heists):{heists}|{if({args(2)}==events):{events}|{if({args(2)}==flashes):{flashGive}}}}}}}}
+{=(removed):{if({args(2)}==announcements):{announcements}|{if({args(2)}==flashsales):{flashSale}|{if({args(2)}==giveaways):{giveaways}|{if({args(2)}==heists):{heists}|{if({args(2)}==events):{events}|{if({args(2)}==flashes):{flashGive}}}}}}}}
+{=(modified):<@&{announcements}>
+<@&{flashSale}>
+<@&{giveaways}>
+<@&{heists}>
+<@&{events}>
+<@&{flashGive}>}
+
+{=(COMMENT):Shows your current roles in a list.}
+{=(roleList):<@&{join(> 
+<@&):{user(roleids)}>}}
+
+{=(COMMENT):Embed stuff, DON'T TOUCH!}
+{=(title):{if({args}==):{user(proper)}'s Current Roles|{if({args(1)}==+):{user(proper)} added|{if({args(1)}==-):{user(proper)} removed|{if({args(+2)}==++):{user(proper)} added|{if({args(1)}==--):{user(proper)} removed|}}}}}}
+{=(description):{if({args}==):{roleList}|{if({args(1)}==+):{added}|{if({args(1)}==-):{removed}|{if({args(+2)}==++):{modified}|{if({args(1)}==--):{modified}|}}}}}}
+{=(prompt):Use this by running `-notifyme +/- option`. Your options are `announcements`, `flashsales`, `giveaways`, `heists`, `events` and `flashes`.
+**See above for your current roles!**
+}
+
+{=(COMMENT):Adds the roles here, also don't touch.}
+{=(execute):{if({args(1)}==+):{+}|{if({args(1)}==-):{-}|{if({args(+2)}==++):{all}|{if({args(1)}==--):{none}|prompt}}}}}
+{{execute}}
+
+{=(COMMENT):Final output. You can remove the override and silent blocks but that'll make the tag act weird.}
+{c:cembed {channel(id)} {"title":"{title}","description":"{description}","author":{"name":"{server}","icon_url":"{server(icon)}"},"color":0498915}}
+{override}
+{silent}
