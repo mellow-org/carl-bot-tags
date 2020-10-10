@@ -1,4 +1,4 @@
-{=(COMMENT):#### Converts your text into and UwU version of it. ####}
+{=(COMMENT):#### Converts your text into an UwU version of it. ####}
 {=(COMMENT):Original tag by Neoon#5790, edits made by me!}
 {=(input):{args}}
 {=(checkInput):{if(!={input}):true|false}}
