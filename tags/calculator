@@ -1,0 +1,5 @@
+{=(COMMENT):#### A basic calculator tag, easily customizable. ####}
+{=(input):{args(1+)}:+,-,*,/}
+{=(conversion):{if({in(k):{args(1+)}}==true):{math:trunc({replace(k,e3):{args(1+)}})}|{if({in(K):{args(1+)}}==true):{math:trunc({replace(K,e3):{args(1+)}}*1000)}|{if({in(m):{args(1+)}}==true):{math:trunc({replace(m, ):{args(1+)}}*1000000)}|{if({in(M):{args(1+)}}==true):{math:trunc({replace(M, ):{args(1+)}}*1000000)}|{args(1+)}}}}}}
+{=(answer):{math:abs({conversion})}}
+{c:cembed {channel(id)} {"url":"https://discord.gg/memers ","title":"Answer","description":"= {if({args}==):Stupidity, that's what it equals to when you use the tag without any arguments.|{m:{answer}}}","thumbnail":{"url":"{server(icon)}"},"color":2802150,"footer":{"icon_url":"{user(icon)}","text":"Bots are OP!"}}}
