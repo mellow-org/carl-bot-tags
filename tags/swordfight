@@ -1,17 +1,23 @@
 {=(COMMENT):Another tag brought to you by the smart people in Carl-Bot Support, specifically ! SpinaChant#1860.}
 {silent}
+
+{=(COMMENT):General Initialization}
 {=():}
 {=(largs):{lower:{args}}}
+
 {=(p1):{user(proper)}}
 {=(p2):{if({in(<@):{args(2)}}==false):{server(random)}|{target(proper)}}}
+
 {=(diamond):85}
 {=(steel):77}
 {=(iron):65}
 {=(stick):1}
+
 {=(emoji1):<:diamondsword:731616456826945619>}
 {=(emoji2):⚔️}
 {=(emoji3):<:stick:731625393345396857>}
 {=(emoji4):<:ironsword:731617263438004268>}
+
 {=(integer):{if({largs(1)}==diamond):{diamond}|{if({largs(1)}==sitck):{stick}|{if({largs(1)}==steel):{steel}|{if({largs(1)}==iron):{iron}}}}}}
 {=(output):{rand:{integer}|{p1} Won!~{p2} Won!}}
 {=(swords):{if({largs(1)}==diamond):Diamond|{if({largs(1)}==steel):Steel|{if({largs(1)}==iron):Iron|
@@ -25,8 +31,6 @@
 {=(steelstats):{"fields":[{"name":"Damage💥","value":"75","inline":true},{"name":"Durability⏰","value":"82","inline":true},{"name":"Win Percentage🔋","value":"77%","inline":true}],"title":"Steel Sword stats {emoji2}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":10197915}}
 {=(stickstats):{"fields":[{"name":"Damage💥","value":"5","inline":true},{"name":"Durability⏰","value":"2","inline":true},{"name":"Win Percentage🔋","value":"1%","inline":true}],"title":"Stick stats {emoji3}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":13727530}}
 {=(ironstats):{"fields":[{"name":"Damage💥","value":"70","inline":true},{"name":"Durability⏰","value":"83","inline":true},{"name":"Win Percentage🔋","value":"65%","inline":true}],"title":"Iron Swords stats {emoji3}","author":{"name":"{user(proper)}","icon_url":"{user(icon)}"},"color":16777215}}
-
-
 
 {=(options):iron stick steel diamond}
 {=(outcome):{{if({in({largs(1)}):{options}}==true):c: cembed {channel(id)} {newjson}}}}
