@@ -1,7 +1,20 @@
 {=(COMMENT):#### Has a 5% chance of banning the target (respects role hierarchy). ####}
-{=(COMMENT):Made by someone in Dank Memer Official (don't remember who unfortunately). ####}
+{=(COMMENT):Made by Raffael#7777 in Carl-Bot Support, edits/improvements by me! ####}
+
 {=(msg):Banned **{target(proper)}**.}
 {{#:c:ban {target(id)} 0 **you got BON'D KID**,95|msg}}
 {react: <:stanky:661978710513287175>}
+
 {=():}
-{{if({user(id)}!=ENTER BASE ROLE ID HERE):require(You aren't powerful enough for this tag): ENTER RESTRICTED ROLE IDS HERE|}}
+{{if({user(id)}!=ENTER BYPASS IDs HERE):require(You aren't powerful enough for this tag):ENTER RESTRICTED ROLE IDs HERE|}}
+
+{=(COMMENT):Makes the tag look more authentic.}
+{break({user(id)}=={target(id)}):```-ban <member> [delete_days] [reason]
+     ^^^^^^^^
+member is a required argument that is missing.```}
+
+{break({args}==):```-ban <member> [delete_days] [reason]
+     ^^^^^^^^
+member is a required argument that is missing.```}
+
+{break({user(position)}<{target(position)}):You cannot do this action on this user due to role hierarchy.}
