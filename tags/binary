@@ -6,4 +6,4 @@
 {=(words):{replace(00100000, ):{join():{replace(01100001,a):{replace(01100010,b):{replace(01100011,c):{replace(01100100,d):{replace(01100101,e):{replace(01100110,f):{replace(01100111,g):{replace(01101000,h):{replace(01101001,i):{replace(01101010,j):{replace(01101011,k):{replace(01101100,l):{replace(01101101,m):{replace(01101110,n):{replace(01101111,o):{replace(01110000,p):{replace(01110001,q):{replace(01110010,r):{replace(01110011,s):{replace(01110100,t):{replace(01110101,u):{replace(01110110,v):{replace(01110111,w):{replace(01111000,x):{replace(01111001,y):{replace(01111010,z):{largs(2+)}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 {=(title):{if({args(1)}==translate):Binary to words|Words to Binary}}
 
-{c:cembed {channel(id)} {"title":"{title}","description":"Here is your decoded message..\n```{if({args(1)}==translate):{words}|{binary}}```","color":{user(color)},"footer":{"text":"Translations made by \\! SpinaChant#1860\\"}}}
+{c:cembed {channel(id)} {"title":"{title}","description":"Here is your decoded message..\n```{if({args(1)}==translate):{words}|{binary}}```","color":{user(color)},"footer":{"text":"Talk like a computer!"}}}
