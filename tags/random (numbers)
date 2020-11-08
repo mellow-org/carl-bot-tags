@@ -13,7 +13,7 @@
 {delete}
 {override}
 
-{=(COMMENT):#### Please do not edit anything below unless you are SURE you know what you're doing. ####}
+{=(COMMENT):### Please do not edit anything below unless you are SURE you know what you're doing. ###}
 
 {=(COMMENT):Takes the user input for 2 numbers.}
 {=(input1):{1}}
