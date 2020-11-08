@@ -30,17 +30,11 @@
 
 {=(extn):{if({locnum}<7):.jpg|{if({locnum}<338):.png|.gif}}}
 
-
-{break({optionsornot}==false):
-{{if({optionsornot}==false):c|=(comment)}:cembed {channel(id)} {"description":"{if({cmt}!=):{cmt}}","thumbnail":{"url":"https://raw.githubusercontent.com/TushBT/Carlpepe/master/all/{pepename}{extn}"},"author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":3553599,"footer":{"text":"#{locnum} #{pepename}"}}}
-}
-
+{break({optionsornot}==false):{{if({optionsornot}==false):c|=(comment)}:cembed {channel(id)} {"description":"{if({cmt}!=):{cmt}}","thumbnail":{"url":"https://raw.githubusercontent.com/TushBT/Carlpepe/master/all/{pepename}{extn}"},"author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":3553599,"footer":{"text":"#{locnum} #{pepename}"}}}}
 
 {break({optionsornot}==true):
 
 {{all({optionsornot}==true|{option}!=help|{option}!=list1|{option}!=list2|{option}!=list3):c|=(comment)}:cembed {channel(id)} {"description":"{if({cmt}!=):{cmt}}","thumbnail":{"url":"https://raw.githubusercontent.com/TushBT/Carlpepe/master/all/{pepename}{extn}"},"author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":3553599,"footer":{"text":"#{locnum} #{pepename}"}}}
-
-
 
 {{all({optionsornot}==true|{option}==list1):c|=(comment)}:cembed {channel(id)} {"title":"Pepe List1","description":"```List 1 of 3```\nBelow is list1 of pepe emotes names.\n\n**For list2 type** : `[prefix]pepe list2`\n\nUsage :\n```[prefix]pepe [emotesname] i so lonely```\nExample : `[prefix]pepe sad i so lonely`\n\nJPG\n```{jpg}```\nPNG\n```{png1}```","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
 
@@ -48,6 +42,4 @@
 
 {{all({optionsornot}==true|{option}==list3):c|=(comment)}:cembed {channel(id)} {"title":"Pepe List3","description":"```List 3 of 3```Below is list3 pepe emotes names.\n\nUsage :\n```[prefix]pepe [emotesname] i so lonely```\nExample : `[prefix]pepe sad i so lonely`\n\nGIF\n```{gif}```","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
 
-{{all({optionsornot}==true|{option}==help):c|=(comment)}:cembed {channel(id)} {"title":"Pepe Help","description":"This Tag give Pepe emotes with user comment. There are 450 emotes available. This can make conversation fun.\n\nBelow are different options available.\n\nNote: If no option is mentioned it will generate a random emote.\n\n1️⃣ Get pepe emote using ID.\nSyntax : \n```[prefix]pepe [ID] YourCommenthere```\nExample : `[prefix]pepe 238 I am so lonely`\n\n2️⃣ Get pepe emotes using its name.\nSyntax : \n```[prefix]pepe [EMOTENAME] YourCommenthere```\nExample : `[prefix]pepe sad I am so lonely`\n\n3️⃣ Get all emotes names list.\nSyntax : \n```[prefix]pepe list1```\nExample : `[prefix]pepe list1`\nNote: Emotes names are divided in three lists : list1, list2 and list3\n\n4️⃣ Help option\nSyntax : \n```[prefix]pepe help```\n\nTag made by TushBT\n\n**[Invite](https://discordapp.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471) Carl Bot to your server NOW.**\n[Support](https://www.patreon.com/carlbot) Carl and get extra perks likes Levels, Music, Voice link and many more check [patreon](https://www.patreon.com/carlbot).","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}
-
-}
+{{all({optionsornot}==true|{option}==help):c|=(comment)}:cembed {channel(id)} {"title":"Pepe Help","description":"This Tag give Pepe emotes with user comment. There are 450 emotes available. This can make conversation fun.\n\nBelow are different options available.\n\nNote: If no option is mentioned it will generate a random emote.\n\n1️⃣ Get pepe emote using ID.\nSyntax : \n```[prefix]pepe [ID] YourCommenthere```\nExample : `[prefix]pepe 238 I am so lonely`\n\n2️⃣ Get pepe emotes using its name.\nSyntax : \n```[prefix]pepe [EMOTENAME] YourCommenthere```\nExample : `[prefix]pepe sad I am so lonely`\n\n3️⃣ Get all emotes names list.\nSyntax : \n```[prefix]pepe list1```\nExample : `[prefix]pepe list1`\nNote: Emotes names are divided in three lists : list1, list2 and list3\n\n4️⃣ Help option\nSyntax : \n```[prefix]pepe help```\n\nTag made by TushBT\n\n**[Invite](https://discordapp.com/oauth2/authorize?client_id=235148962103951360&scope=bot&permissions=66321471) Carl Bot to your server NOW.**\n[Support](https://www.patreon.com/carlbot) Carl and get extra perks likes Levels, Music, Voice link and many more check [patreon](https://www.patreon.com/carlbot).","author":{"name":"{user(name)}","icon_url":"{user(avatar)}"},"color":262035}}}
